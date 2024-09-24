@@ -1,13 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root,
 body {
+  width: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.image-pixelated {
+  image-rendering: pixelated;
+  /* For Firefox */
+  image-rendering: -moz-crisp-edges;
+  /* For Firefox */
+  image-rendering: -o-crisp-edges;
+  /* For Opera */
+  image-rendering: crisp-edges;
+  /* For Chrome and Edge */
+  image-rendering: -webkit-optimize-contrast;
+  /* For Safari */
+}
+
+@font-face {
+  font-family: 'chronotype';
+  src: url('./ChronoType.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* styles.css or your global stylesheet */
+@keyframes sway {
+
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.image-sway {
+  animation: sway 2s ease-in-out infinite;
+}
+
+/* styles.css or your global stylesheet */
+@keyframes pop {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.image-pop {
+  animation: pop 4s ease-in-out infinite;
+}
+
+.image-sway {
+  animation: sway 2s ease-in-out infinite;
 }
